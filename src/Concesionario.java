@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Concesionario {
-    private List<Vehiculo> inventario = new ArrayList<>(); // Lista de vehículos disponibles
+    private List<Vehiculo> inventarios = new ArrayList<>(); // Lista de vehículos disponibles
     private List<Venta> ventas = new ArrayList<>(); // Lista de ventas realizadas
 
     // Método para agregar un vehículo al inventario
@@ -23,7 +23,7 @@ public class Concesionario {
         // Si se encuentra el vehículo, se registra la venta
         if (vehiculoVendido != null) {
             ventas.add(new Venta(monto, vehiculoVendido, apellido, nombre, documento));
-            inventario.remove(vehiculoVendido);
+            inventarios.remove(vehiculoVendido);
             System.out.println("Venta realizada: " + nombre + " " + apellido + " ha comprado " + vehiculoVendido.getMarca());
         } else {
             System.out.println("Error: Vehículo con código " + codigoVehiculo + " no encontrado.");
@@ -31,9 +31,9 @@ public class Concesionario {
     }
 
     // Método para mostrar el inventario actual
-    public void mostrarInventario() {
+    public void mostrarInventarios() {
         System.out.println("Inventario actual:");
-        for (Vehiculo v : inventario) {
+        for (Vehiculo v : inventarios) {
             System.out.println(v);
         }
     }
